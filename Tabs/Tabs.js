@@ -23,6 +23,7 @@ class Tabs extends HTMLElement {
   }
 
   render() {
+    this.shadowRoot.innerHTML = '';
     const template = this.currentDocument.createElement('div');
     template.setAttribute('class', 'tabs');
 
@@ -55,6 +56,9 @@ class Tabs extends HTMLElement {
 
 const tabsTemplate = () => `
   <style>
+  wc-tabs:unresolved { opacity: 0; }
+  wc-tab:unresolved { opacity: 0; }
+    :host { display: block; }
     * {
       margin: 0;
       padding: 0;
@@ -70,6 +74,7 @@ const tabsTemplate = () => `
       color: #333;
       padding: 0.7rem 1.5rem;
       cursor: pointer;
+      font-size: 1rem;
       border: 1px solid transparent;
       border-bottom: none;
       border-radius: 4px 4px 0 0;
@@ -114,6 +119,8 @@ class Tab extends HTMLElement {
 
 const tabTemplate = () => `
   <style>
+  wc-tabs:unresolved { opacity: 0; }
+  wc-tab:unresolved { opacity: 0; }
     .tab {
       overflow: hidden;
       padding: 1rem;
