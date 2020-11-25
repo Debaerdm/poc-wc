@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -40,8 +40,14 @@
 </head>
 
 <body>
-  <wc-date-picker class="date-picker"></wc-date-picker>
+  <wc-date-picker class="date-picker" />
   <script src="./DatePicker.js"></script>
+  <script>
+    const datePicker = document.querySelector('.date-picker');
+    datePicker.addEventListener('onChange', ({ detail: { date } }) => {
+      console.log({ date })
+    })
+  </script>
 </body>
 
 </html>
